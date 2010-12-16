@@ -10,6 +10,7 @@
 		2481364C115A750000E3A9BA /* iPhoneSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 24813648115A750000E3A9BA /* iPhoneSimulator.m */; };
 		2481364D115A750000E3A9BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 24813649115A750000E3A9BA /* main.m */; };
 		2481364E115A750000E3A9BA /* nsprintf.m in Sources */ = {isa = PBXBuildFile; fileRef = 2481364B115A750000E3A9BA /* nsprintf.m */; };
+		6AE191B112B9563B000D4EE9 /* iPhoneSimulatorRemoteClient in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AE191B012B9563B000D4EE9 /* iPhoneSimulatorRemoteClient */; };
 		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		2481364A115A750000E3A9BA /* nsprintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = nsprintf.h; path = Source/nsprintf.h; sourceTree = "<group>"; };
 		2481364B115A750000E3A9BA /* nsprintf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = nsprintf.m; path = Source/nsprintf.m; sourceTree = "<group>"; };
 		32A70AAB03705E1F00C91783 /* iphonesim_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphonesim_Prefix.pch; sourceTree = "<group>"; };
+		6AE191B012B9563B000D4EE9 /* iPhoneSimulatorRemoteClient */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = iPhoneSimulatorRemoteClient; path = /Developer3.1/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/iPhoneSimulatorRemoteClient.framework/Versions/A/iPhoneSimulatorRemoteClient; sourceTree = "<absolute>"; };
 		8DD76FA10486AA7600D96B5E /* iphonesim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = iphonesim; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -42,6 +44,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+				6AE191B112B9563B000D4EE9 /* iPhoneSimulatorRemoteClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,7 @@
 		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				6AE191B012B9563B000D4EE9 /* iPhoneSimulatorRemoteClient */,
 				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
 			);
 			name = "External Frameworks and Libraries";
@@ -115,7 +119,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "iphonesim" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 08FB7794FE84155DC02AAC07 /* iphonesim */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -155,6 +166,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iphonesim_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)3.1/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/iPhoneSimulatorRemoteClient.framework/Versions/A\"",
+				);
 				PRODUCT_NAME = iphonesim;
 			};
 			name = Debug;
@@ -172,6 +187,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iphonesim_Prefix.pch;
 				INSTALL_PATH = /usr/local/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_DIR)3.1/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/iPhoneSimulatorRemoteClient.framework/Versions/A\"",
+				);
 				PRODUCT_NAME = iphonesim;
 			};
 			name = Release;
@@ -187,15 +206,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = .;
 				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = (
-					"-framework",
-					AppKit,
-					"-F/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks",
-					"-framework",
-					iPhoneSimulatorRemoteClient,
-					"-Wl,-rpath",
-					"-Wl,/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks",
-				);
+				OTHER_LDFLAGS = "";
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 				VALID_ARCHS = "i386 x86_64";

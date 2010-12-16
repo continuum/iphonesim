@@ -94,6 +94,7 @@
 
     /* Create the app specifier */
     appSpec = [DTiPhoneSimulatorApplicationSpecifier specifierWithApplicationPath: path];
+
     if (appSpec == nil) {
         nsprintf(@"Could not load application specification for %s", path);
         return EXIT_FAILURE;
@@ -102,9 +103,8 @@
 
     /* Load the default SDK root */
     
-    nsprintf(@"SDK Root: %@", sdkRoot);
-
-    /* Set up the session configuration */
+    nsprintf(@"SDK Root: %@", [sdkRoot sdkRootPath]);
+	/* Set up the session configuration */
     config = [[[DTiPhoneSimulatorSessionConfig alloc] init] autorelease];
     [config setApplicationToSimulateOnStart: appSpec];
     [config setSimulatedSystemRoot: sdkRoot];
